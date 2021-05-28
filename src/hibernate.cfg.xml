@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5433/postgres</property>
+
+        <property name="hibernate.connection.username">kinatra</property>
+
+        <property name="hibernate.connection.password"></property>
+
+
+
+
+        <!-- JDBC connection pool (use the built-in) -->
+
+        <property name="connection.pool_size">1</property>
+
+
+
+
+        <!-- SQL dialect -->
+
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+
+
+
+
+        <!-- Echo all executed SQL to stdout -->
+
+        <!--        <property name="show_sql">true</property>-->
+
+
+
+
+        <!--Drop and re-create the database schema on startup-->
+
+        <property name="hbm2ddl.auto">create</property>
+
+
+
+
+        <!-- Enable Hibernate stats in the logs -->
+
+        <property name="hibernate.generate_statistics">false</property>
+
+
+
+
+        <!-- Full names the annotated entity class -->
+        <mapping class="Team" />
+        <mapping class="Person"/>
+        <mapping class="Tournament"/>
+        <mapping class="TeamInTournament"/>
+        <mapping class="Player"/>
+
+
+    </session-factory>
+
+</hibernate-configuration>
